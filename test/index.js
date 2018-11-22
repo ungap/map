@@ -36,9 +36,10 @@ function test() {
   var ws2 = new Map([[a, b]]);
 
   console.assert(ws1.has(a) === false);
-  console.assert(ws1.set(a, 123) === ws1);
+  console.assert(ws1.set(a, 456) === ws1);
   console.assert(ws1.set(a, 123) === ws1);
   console.assert(ws1.has(a) === true);
+  console.assert(ws1.size === 1);
   ws1.clear();
   ws1.set(a, b);
   var entries = ws1.entries();
@@ -57,7 +58,6 @@ function test() {
     console.assert(values.length === 1);
     console.assert(values[0] === b);
   }
-  console.log(ws1.forEach);
   ws1.forEach(function (value, key, map) {
     console.assert(value === b);
     console.assert(key === a);

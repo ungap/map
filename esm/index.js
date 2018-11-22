@@ -2,11 +2,16 @@
 try { new Map; }
 catch (o_O) {
   (function (i, dPs) {'use strict';
-    var proto = (Map = function Map(iterable) {
+    var proto = dPs((Map = function Map(iterable) {
       dPs(this, {_k: {value: []}, _v: {value: []}});
       if (iterable)
         iterable.forEach(add, this);
-    }).prototype;
+    }).prototype, {size: {
+      configurable: true,
+      get: function () {
+        return this._k.length;
+      }
+    }});
     proto.clear = function () {
       var length = this._k.length;
       this._k.splice(0, length);
