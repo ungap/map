@@ -1,6 +1,6 @@
 {
   "name": "@ungap/map",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Map polyfill for legacy browsers.",
   "main": "cjs/index.js",
   "module": "esm/index.js",
