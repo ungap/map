@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ungap Map</title>
+  <script src="global.js"></script>
+  <script type="module">
+  import M from '../esm/index.js';
+  window.M = M;
+  </script>
+  <script>
+  this.onload = function () {
+    if (!this.M)
+      loadScript('../min.js', function () {
+        loadTest(Map, 'Map!');
+      });
+    else {
+      console.assert(M === Map);
+      loadTest(Map, 'Map!');
+    }
+  };
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
