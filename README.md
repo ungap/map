@@ -5,5 +5,5 @@
 A [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) polyfill for legacy browsers.
 
   * CDN via https://unpkg.com/@ungap/map
-  * ESM via `import WeakSet from '@ungap/map'`
-  * CJS via `const WeakSet = require('@ungap/map')`
+  * ESM via `import Map from '@ungap/map'`
+  * CJS via `const Map = require('@ungap/map')`
