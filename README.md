@@ -7,3 +7,7 @@ A [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global
   * CDN via https://unpkg.com/@ungap/map
   * ESM via `import Map from '@ungap/map'`
   * CJS via `const Map = require('@ungap/map')`
+
+Compatible down to IE9, works well with ES5 shim upfront in IE8 (and maybe lower too).
+
+[Live test](https://ungap.github.io/map/test/)
