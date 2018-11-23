@@ -1,12 +1,9 @@
 /*! (c) Andrea Giammarchi - ISC */
-try { new Map; }
-catch (o_O) {
+var self = this || /* istanbul ignore next */ {};
+try { self.Map = Map; }
+catch (Map) {
   (function (i, dPs) {'use strict';
-    var proto = dPs((Map = function Map(iterable) {
-      dPs(this, {_k: {value: []}, _v: {value: []}});
-      if (iterable)
-        iterable.forEach(add, this);
-    }).prototype, {size: {
+    var proto = dPs(Map.prototype, {size: {
       configurable: true,
       get: function () {
         return this._k.length;
@@ -52,7 +49,13 @@ catch (o_O) {
     proto.values = function () {
       return this._v.slice(0);
     };
+    self.Map = Map;
     return Map;
+    function Map(iterable) {
+      dPs(this, {_k: {value: []}, _v: {value: []}});
+      if (iterable)
+        iterable.forEach(add, this);
+    }
     function add(pair) {
       this.set(pair[0], pair[1]);
     }
@@ -65,4 +68,4 @@ catch (o_O) {
     }
   }(0, Object.defineProperties));
 }
-module.exports = Map;
+module.exports = self.Map;

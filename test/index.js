@@ -1,7 +1,5 @@
 var Map = require('../cjs');
-
 var $Map = Map;
-
 test();
 
 delete require.cache[require.resolve('../cjs')];
