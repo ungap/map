@@ -1,5 +1,6 @@
 /*! (c) Andrea Giammarchi - ISC */
 var self = this || /* istanbul ignore next */ {};
+/* istanbul ignore next */
 try { self.Map = Map; }
 catch (Map) {
   (function (i, dPs) {'use strict';

@@ -1,29 +1,4 @@
 var Map = require('../cjs');
-var $Map = Map;
-test();
-
-delete require.cache[require.resolve('../cjs')];
-delete global.Map;
-
-if (typeof process !== 'undefined') {
-  var i = 0;
-  Object.defineProperty(global, 'Map', {
-    configurable: true,
-    get: function () {
-      if (1 === i++)
-        throw $Map;
-      return $Map;
-    },
-    set: function (Map) {
-      delete global.Map;
-      global.Map = Map;
-    }
-  });
-}
-
-Map = require('../cjs');
-global.Map = $Map;
-
 test();
 
 function test() {
