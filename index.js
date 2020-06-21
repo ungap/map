@@ -1,5 +1,5 @@
 /*! (c) Andrea Giammarchi - ISC */
-var self = this || /* istanbul ignore next */ {};
+var self = this || {};
 /* istanbul ignore next */
 try { self.Map = Map; }
 catch (Map) {
